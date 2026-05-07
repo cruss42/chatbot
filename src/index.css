@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ios-blue: #007AFF;
+  --color-ios-grey: #E9E9EB;
+  --color-ios-bg: #FFFFFF;
+  --color-ios-header: rgba(249, 249, 249, 0.94);
+  
+  --color-ios-dark-bg: #000000;
+  --color-ios-dark-grey: #262629;
+  --color-ios-dark-header: rgba(28, 28, 30, 0.9);
+}
+
+body {
+  @apply bg-ios-bg text-black antialiased transition-colors duration-300;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body.dark {
+  @apply bg-ios-dark-bg text-white;
+}
+
+.imessage-user {
+  @apply bg-ios-blue text-white rounded-[18px] px-3.5 py-2 font-normal max-w-[75%] relative shadow-sm;
+}
+
+.imessage-aria {
+  @apply bg-ios-grey text-black rounded-[18px] px-3.5 py-2 font-normal max-w-[75%] relative shadow-sm transition-colors;
+}
+
+body.dark .imessage-aria {
+  @apply bg-ios-dark-grey text-white;
+}
+
+.ios-header {
+  @apply bg-ios-header backdrop-blur-xl border-b border-slate-200 sticky top-0 z-50 transition-colors;
+}
+
+body.dark .ios-header {
+  @apply bg-ios-dark-header border-white/10;
+}
+
+.chat-container {
+  @apply max-w-2xl mx-auto w-full h-screen flex flex-col bg-inherit overflow-hidden relative;
+}
+
+.action-menu {
+  @apply absolute bottom-20 left-4 bg-white/90 dark:bg-zinc-800/90 backdrop-blur-xl rounded-2xl p-2 shadow-2xl border border-slate-200 dark:border-white/10 z-50 flex flex-col gap-1 w-72;
+}
+
+.action-item {
+  @apply flex items-center gap-3 px-3 py-2 hover:bg-ios-blue/10 rounded-xl transition-colors text-sm font-medium;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
