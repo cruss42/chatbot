@@ -2,7 +2,7 @@ name: Deploy Vite to GitHub Pages
 
 on:
   push:
-    branches: ["main"] 
+    branches: ["main"]
 
 permissions:
   contents: read
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: 20
       - name: Install dependencies
-        run: npm install --package-lock-only || npm install
+        run: npm install --no-package-lock
       - name: Build
         run: npm run build
       - name: Upload artifact
